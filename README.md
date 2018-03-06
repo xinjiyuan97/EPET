@@ -14,9 +14,9 @@
 - 试验记录
 
 ## 具体情况
-- [学生端]()
-- [教师端]()
-- [服务器端]()
+- [学生端](https://github.com/xinjiyuan97/EPET/blob/master/Client/Student/Android/StudentClient.md)
+- [教师端](https://github.com/xinjiyuan97/EPET/blob/master/Client/Teacher/TeacherClient.md)
+- [服务器端](https://github.com/xinjiyuan97/EPET/blob/master/Server/Server.md)
 
 ---
 ## 人员
