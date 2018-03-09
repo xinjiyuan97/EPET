@@ -1,4 +1,5 @@
 # experimental practice of electronic technique
+## 项目简介
 ## 新版本特性
 1. 网络通讯和数据管理
 2. 电气试验多个试验
@@ -11,9 +12,10 @@
 - 学生数据手动上传
 - 教师端手动评分
 - 评分结果返还
-- 试验记录
+- 生成试验记录
 
 ## 具体情况
+![](https://github.com/xinjiyuan97/EPET/blob/dev/img/figure.png)
 - [学生端](https://github.com/xinjiyuan97/EPET/blob/master/Client/Student/Android/StudentClient.md)
 - [教师端](https://github.com/xinjiyuan97/EPET/blob/master/Client/Teacher/TeacherClient.md)
 - [服务器端](https://github.com/xinjiyuan97/EPET/blob/master/Server/Server.md)
@@ -22,9 +24,10 @@
 ## 人员
 - 安卓部分 王钲日 李牧锴
 - 教师端（后端） EC&gf
-- 咸鱼 BK
-- 总调度 负责人 大佬 什么都会 XJY
-（最好有妹子）
+- 服务器维护、数据库 BK
+- 咸鱼 XJY
+- 后期维护　NULL
+（P.S. 最好有妹子）
 
 ---
 
@@ -37,6 +40,6 @@
 ## 进度及拟定日期
 - [ ] 数据库建立完毕（3.11）
 - [ ] 服务器环境布置 （3.16）
-- [ ] 教师端【后端】 （2.28）
-- [ ] 学生端 （2.28）
+- [ ] 教师端【后端】 （4.28）
+- [ ] 学生端 （4.28）
 - [ ] 教师端【前端】（4.4）
