@@ -1,0 +1,12 @@
+# Python3
+*.pyc
+
+# Django
+db.*
+
+# MacOS
+.DS_Store
+
+# sublime text
+*.sublime-project
+*.sublime-workspace
