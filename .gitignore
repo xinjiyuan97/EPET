@@ -10,3 +10,6 @@ db.*
 # sublime text
 *.sublime-project
 *.sublime-workspace
+
+# Password
+./Server/email.json
