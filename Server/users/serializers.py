@@ -6,7 +6,6 @@ Date: 2018-3-10
 from rest_framework import serializers
 from users.models import UserInfo, USERTYPE
 from django.contrib.auth.hashers import make_password
-from experiment.models import ContentOfClass
 import datetime
 import Messager.messager as mess
 from django.contrib.auth.models import User

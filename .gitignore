@@ -3,7 +3,7 @@
 
 # Django
 db.*
-
+*/migrations/*
 # MacOS
 .DS_Store
 

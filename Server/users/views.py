@@ -16,6 +16,7 @@ from utils.permissions import IsOwner
 from rest_framework import generics
 from rest_framework import permissions
 from django.contrib.auth.models import User
+from django.contrib import auth
 # Create your views here.
 def varify(request):
     # TODO: 用户邮箱Token验证
@@ -72,25 +73,13 @@ class UserRegister(generics.CreateAPIView):
     #     return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 class UserLogin(APIView):
-    def confirmUser(self, request):
-        try:
-            ID = request.data['ID']
-            password = request.data['password']
-            user = UserInfo.objects.get(ID = ID)
-            checkPassword(user, password)
-        except UserInfo.DoesNotExist as e:
-            return None
-        except WrongPassword as e:
-            return None
-        except Exception as e:
-            return None
-        return user
-
     def post(self, request, format = None):
-        user = self.confirmUser(request)
+        username = request.data['username']
+        password = request.data['password']
+        user = auth.authenticate(username = username, password = password) 
         print(user)
         if user:
-            request = setSession(request, user)
+            auth.login(request, user)
             return Response(status = status.HTTP_202_ACCEPTED)
         else:
             return Response(status = status.HTTP_406_NOT_ACCEPTABLE)
