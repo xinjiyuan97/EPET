@@ -55,7 +55,6 @@ class CompleteUserInfo(generics.RetrieveUpdateDestroyAPIView):
     
     lookup_field = 'id'
     def perform_create(self, serializer):
-        print(self.request.user)
         serializer.save(userAccount = self.request.user)
 
 class UserRegister(generics.CreateAPIView):

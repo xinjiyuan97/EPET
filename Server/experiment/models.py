@@ -15,7 +15,7 @@ class Experiments(models.Model):
     # def getDefaultUser():
     #     return User.objects.get(username = 'admin')
 
-    owner = models.ForeignKey('users.UserInfo', related_name = "ExpermentAuthor", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "ExpermentAuthor", default = None, on_delete = models.CASCADE)
 
     priority = models.IntegerField() # 实验优先级
     Title = models.CharField(max_length = 200) # 实验名称
@@ -35,7 +35,7 @@ class ContentOfClass(models.Model):
     # def getDefaultUser():
     #     return User.objects.get(username = 'admin')
 
-    owner = models.ForeignKey('users.UserInfo', related_name = "ClassOwner", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "ClassOwner", default = None, on_delete = models.CASCADE)
     Title = models.CharField(max_length = 200) # 课程名称
     experments = models.TextField() # 包含实验，用Json描述
     
@@ -43,7 +43,7 @@ class ExperimentScore(models.Model):
     """
     TODO: 记录完成了哪些实验
     """
-    owner = models.ForeignKey('users.UserInfo', related_name = "ScoreOwner", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "ScoreOwner", default = None, on_delete = models.CASCADE)
     Title = models.CharField(max_length = 200)
     date = models.DateTimeField(default = timezone.now)
 
@@ -63,7 +63,7 @@ class JudgeRequest(models.Model):
     """
     TODO: 审核请求
     """
-    owner = models.ForeignKey('users.UserInfo', related_name = "RequestOwner", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "RequestOwner", default = None, on_delete = models.CASCADE)
     Title = models.CharField(max_length = 200)
     date = models.DateTimeField(default = timezone.now)
     report = models.TextField()

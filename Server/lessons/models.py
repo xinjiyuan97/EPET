@@ -32,7 +32,7 @@ class LabServers(models.Model):
     """
     TODO: 用于记录实验室教师机在线情况
     """
-    owner = models.ForeignKey('users.UserInfo', related_name = "Teacher", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "Teacher", default = None, on_delete = models.CASCADE)
     labNum = models.CharField(max_length = 200) # 实验室门牌号
     date = models.DateTimeField(default = timezone.now)
     labStatus = models.CharField(
@@ -49,7 +49,7 @@ class StudentRequests(models.Model):
     """
     TODO: 处理学生端请求事务
     """
-    owner = models.ForeignKey('users.UserInfo', related_name = "Student", default = None)
+    owner = models.ForeignKey('users.UserInfo', related_name = "Student", default = None, on_delete = models.CASCADE)
     labNum = models.CharField(max_length = 200) # 实验室门牌号
     tableNum = models.IntegerField() # 学生桌号
     date = models.DateTimeField(default = timezone.now) # 请求发送时间
