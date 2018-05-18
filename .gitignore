@@ -1,0 +1,15 @@
+# Python3
+*.pyc
+
+# Django
+db.*
+*/migrations/*
+# MacOS
+.DS_Store
+
+# sublime text
+*.sublime-project
+*.sublime-workspace
+
+# Password
+./Server/email.json

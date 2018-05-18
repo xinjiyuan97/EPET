@@ -1,0 +1,7 @@
+{
+    "EMAIL_HOST": "smtp.163.com",
+    "EMAIL_PORT": 25,
+    "EMAIL_HOST_USER": "xinjiyuan97@163.com",
+    "EMAIL_HOST_PASSWORD": "B47l5W8bKuf2",
+    "DEFAULT_FROM_EMAIL": "xinjiyuan97 <xinjiyuan97@163.com>"
+}
