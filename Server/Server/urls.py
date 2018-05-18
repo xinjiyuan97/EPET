@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from users import views as userViews
 from experiment import views as experimentViews
 from lessons import views as lessonsViews
@@ -45,9 +47,5 @@ urlpatterns = [
     url(r'^api/student/list/', lessonsViews.ListUndoStudentRequest.as_view()),
     url(r'^api/student/update/', lessonsViews.FillStudentRequest.as_view()),
     url(r'^api/student/get/', lessonsViews.GetRespond.as_view()),
-]
-
-urlpatterns += [
-    url(r'^api-auth/', include('rest_framework.urls',
-                               namespace='rest_framework')),
-]
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

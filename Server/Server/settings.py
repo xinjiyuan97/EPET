@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_1w#(jsbcob)$5^$ki(xv^=qoxelya207r=yqp%wzi@e#*ni!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,6 +84,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'EPET',
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'CHARSET': 'utf8',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -135,4 +146,10 @@ EMAIL_HOST_PASSWORD = emailSetting['EMAIL_HOST_PASSWORD']
 DEFAULT_FROM_EMAIL = emailSetting['DEFAULT_FROM_EMAIL']
 
 # Static files (CSS, JavaScript, Images)
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "collected_static")
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+)
