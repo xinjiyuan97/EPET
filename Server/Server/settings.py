@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_1w#(jsbcob)$5^$ki(xv^=qoxelya207r=yqp%wzi@e#*ni!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'experiment.apps.ExperimentConfig',
     'lessons.apps.LessonsConfig',
+    
+    'basicPages',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +90,7 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'EPET',
-#         'USER': '',
+#         'USER': ''esd,
 #         'PASSWORD': '',
 #         'HOST': 'localhost',
 #         'PORT': '3306',

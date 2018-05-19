@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from users import views as userViews
 from experiment import views as experimentViews
 from lessons import views as lessonsViews
+from basicPages import views as basicViews
 urlpatterns = [
     url(r'^register/varify/$', userViews.varify),
     url(r'^api/users/$', userViews.UsersList.as_view()),
@@ -48,4 +49,9 @@ urlpatterns = [
     url(r'^api/student/update/', lessonsViews.FillStudentRequest.as_view()),
     url(r'^api/student/get/', lessonsViews.GetRespond.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^$', basicViews.home, name = 'home'),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+
+handler403 = basicViews.permissionDenied
+handler404 = basicViews.pageNotFound
+handler500 = basicViews.pageError
