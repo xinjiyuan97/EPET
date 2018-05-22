@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^api/register/completeInfo/(?P<id>[0-9]+)/$', userViews.CompleteUserInfo.as_view()),
     url(r'^api/register/$', userViews.UserRegister.as_view()),
     url(r'^api/login/$', userViews.UserLogin.as_view()),
+    url(r'^api/logout/$', userViews.UserLogout.as_view()),
     
     url(r'^admin/', admin.site.urls),
     
@@ -46,10 +47,12 @@ urlpatterns = [
 
     url(r'^api/student/request/', lessonsViews.SendStudentRequest.as_view()),
     url(r'^api/student/list/', lessonsViews.ListUndoStudentRequest.as_view()),
-    url(r'^api/student/update/', lessonsViews.FillStudentRequest.as_view()),
-    url(r'^api/student/get/', lessonsViews.GetRespond.as_view()),
+    url(r'^api/student/update/(?P<id>[0-9]+)/$', lessonsViews.FillStudentRequest.as_view()),
+    url(r'^api/student/get/(?P<id>[0-9]+)/$', lessonsViews.GetRespond.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', basicViews.home, name = 'home'),
+    url(r'^login/', basicViews.login, name = 'login'),
+    url(r'^signup/', basicViews.signup, name = 'signup')
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 handler403 = basicViews.permissionDenied

@@ -17,6 +17,8 @@ from rest_framework import generics
 from rest_framework import permissions
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def varify(request):
     # TODO: 用户邮箱Token验证
@@ -76,12 +78,16 @@ class UserLogin(APIView):
         username = request.data['username']
         password = request.data['password']
         user = auth.authenticate(username = username, password = password) 
-        print(user)
         if user:
             auth.login(request, user)
             return Response(status = status.HTTP_202_ACCEPTED)
         else:
             return Response(status = status.HTTP_406_NOT_ACCEPTABLE)
+
+class UserLogout(APIView):
+    def post(self, request, format = None):
+        auth.logout(request)
+        return Response(status = status.HTTP_202_ACCEPTED)
 
 class UserModifyPassword(APIView):
     def post(self, request, format = None):

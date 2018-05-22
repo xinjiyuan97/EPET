@@ -48,7 +48,7 @@ class SendStudentRequest(generics.CreateAPIView):
 class FillStudentRequest(generics.UpdateAPIView):
     queryset = StudentRequests.objects.all()
     serializer_class = StudentRequestSerializer
-
+    lookup_field = 'id'
     permission_classes = (IsTeacher, )
 
 class ListUndoStudentRequest(generics.ListAPIView):
@@ -67,5 +67,5 @@ class ListUndoStudentRequest(generics.ListAPIView):
 class GetRespond(generics.RetrieveAPIView):
     queryset = StudentRequests.objects.filter(requestStatus = 'CLOSE')
     serializer_class = StudentRequestSerializer
-
+    lookup_field = 'id'
     permission_classes = (IsOwner, )
