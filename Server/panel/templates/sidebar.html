@@ -1,0 +1,35 @@
+<div class="sidebar-menu">
+    <header class="logo">
+    <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+    <a href="/"> <span id="logo"> <h1>EPET</h1></span> </a>
+                    <!--<img id="logo" src="" alt="Logo"/>--> 
+    </header>
+    <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+        <div class="down">  
+        <a href="/"><span class=" name-caret">{{ user.name }}</span></a>
+        <p>{{ user.id }}</p>
+        <ul>
+            <li><a class="tooltips" href="index.html"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+            <li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+            <li><a class="tooltips" href="/logout/"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+        </ul>
+    </div>
+    {% include "sidebarMenu.html"%}
+</div>
+
+<script>
+    var toggle = true;
+    $(".sidebar-icon").click(function() {                
+        if (toggle) {
+            $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+            $("#menu span").css({"position":"absolute"});
+        }
+        else {
+            $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+            setTimeout(function() {
+                $("#menu span").css({"position":"relative"});
+            }, 400);
+        }
+        toggle = !toggle;
+    });
+</script>

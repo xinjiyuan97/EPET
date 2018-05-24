@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'lessons.apps.LessonsConfig',
     
     'basicPages',
+    'panel',
 ]
 
 MIDDLEWARE = [

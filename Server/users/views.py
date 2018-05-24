@@ -17,7 +17,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from django.contrib.auth.models import User
 from django.contrib import auth
-from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def varify(request):

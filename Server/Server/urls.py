@@ -21,6 +21,7 @@ from users import views as userViews
 from experiment import views as experimentViews
 from lessons import views as lessonsViews
 from basicPages import views as basicViews
+from panel import views as panelViews
 urlpatterns = [
     url(r'^register/varify/$', userViews.varify),
     url(r'^api/users/$', userViews.UsersList.as_view()),
@@ -50,9 +51,14 @@ urlpatterns = [
     url(r'^api/student/update/(?P<id>[0-9]+)/$', lessonsViews.FillStudentRequest.as_view()),
     url(r'^api/student/get/(?P<id>[0-9]+)/$', lessonsViews.GetRespond.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
     url(r'^$', basicViews.home, name = 'home'),
     url(r'^login/', basicViews.login, name = 'login'),
-    url(r'^signup/', basicViews.signup, name = 'signup')
+    url(r'^signup/', basicViews.signup, name = 'signup'),
+    url(r'^fillinfo/', basicViews.fillInformation, name = 'fillInfo'),
+
+    url(r'^home/', panelViews.home, name = "panel"),
+    url(r'^logout/', panelViews.logout, name = "panel")
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 handler403 = basicViews.permissionDenied

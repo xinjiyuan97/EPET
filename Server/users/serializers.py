@@ -26,7 +26,7 @@ class UserInfoSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validatedData):
         if instance.status == False or instance.email != validatedData['email']:
-            instance.tokenExptime = datetime.datetime.now() + datetime.timedelta(days = 7)
+            instance.tokenExptime = datetime.datetime.now() + datetime.timedelta(days = 2)
             instance.actiCode = self.createActiCode(instance)
             instance.status = False
             mess.sendVerifyMail(validatedData['name'], validatedData['email'], instance.actiCode)
@@ -63,7 +63,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('id', 'username', 'password')
 
 """
 {
