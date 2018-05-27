@@ -21,7 +21,7 @@ def pageError(request):
     return render(request, 'errorPage.html', {'errorCode': 500})
 
 def login(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return HttpResponseRedirect('/')
     if request.method == 'POST':
         form = LogInForm(request.POST)

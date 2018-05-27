@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>{{ title }}</title>
+    <title>北航电气实践教学系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
+
+    {% block header %}
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- Bootstrap Core CSS -->
     <link href="/static/panel/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
@@ -31,7 +33,7 @@
     <script src="/static/panel/js/skycons.js"></script>
 
     <script src="/static/panel/js/jquery.easydropdown.js"></script>
-
+    {% endblock %}
     <!--//skycons-icons-->
 </head> 
 
@@ -40,9 +42,9 @@
         <div class="left-content">
             <div class="inner-content">
                 {% include "header.html" %}
-                
+                {% block inner %}
                 {% include "inner.html" %}
-
+                {% endblock %}
                 {% include "footer.html" %}
             </div>
         </div>

@@ -4,11 +4,20 @@
 {% endif %}
 </a>
 <ul class="dropdown-menu two">
-    <li>
-        <div class="notification_header">
-            <h3>You have 5 new notification</h3>
-        </div>
-    </li>
+    {% if notificationList %}
+        <li>
+            <div class="notification_header">
+               <h3>你有{notification|length} 条提醒</h3>
+            </div>
+        </li>
+    {% else %}
+        <li>
+            <div class="notification_header">
+               <h3>暂无新消息</h3>
+            </div>
+        </li>
+    {% endif %}
+    {% for item in notificationList %}
     <li><a href="#">
         <div class="user_img"><img src="images/in.jpg" alt=""></div>
         <div class="notification_desc">
@@ -17,25 +26,10 @@
         </div>
         <div class="clearfix"></div>  
     </a></li>
-    <li class="odd"><a href="#">
-        <div class="user_img"><img src="images/in5.jpg" alt=""></div>
-        <div class="notification_desc">
-            <p>Lorem ipsum dolor sit amet </p>
-            <p><span>1 hour ago</span></p>
-        </div>
-        <div class="clearfix"></div> 
-    </a></li>
-    <li><a href="#">
-        <div class="user_img"><img src="images/in8.jpg" alt=""></div>
-        <div class="notification_desc">
-            <p>Lorem ipsum dolor sit amet </p>
-            <p><span>1 hour ago</span></p>
-        </div>
-        <div class="clearfix"></div> 
-    </a></li>
+    {% endfor %}
     <li>
         <div class="notification_bottom">
-            <a href="#">See all notification</a>
+            <a href="#">查看所有提醒</a>
         </div> 
     </li>
 </ul>

@@ -59,6 +59,7 @@ class ListUndoStudentRequest(generics.ListAPIView):
 
         lab = self.request.GET['labNum']
         queryset = StudentRequests.objects.filter(labNum = lab, requestStatus = 'HALT')
+        queryset
         return queryset
     serializer_class = StudentRequestSerializer
 

@@ -58,7 +58,13 @@ urlpatterns = [
     url(r'^fillinfo/', basicViews.fillInformation, name = 'fillInfo'),
 
     url(r'^home/', panelViews.home, name = "panel"),
-    url(r'^logout/', panelViews.logout, name = "panel")
+    url(r'^logout/', panelViews.logout, name = "panel"),
+    url(r'^syllabus/', panelViews.syllabus, name = 'syllabus'),
+    url(r'^experiment/$', panelViews.experiment, name = 'experiment'),
+    url(r'^report/$', panelViews.report, name = 'report'),
+    url(r'^score/$', panelViews.score, name = 'score'),
+    url(r'^data/$', panelViews.data, name = 'data'),
+    url(r'^aboutUs/$', panelViews.aboutUs, name = 'aboutUs'),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 handler403 = basicViews.permissionDenied

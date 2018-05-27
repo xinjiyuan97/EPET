@@ -1,0 +1,210 @@
+/* Header */
+
+#page-wrapper {
+    padding-top: 8vh;
+}
+
+
+
+#header {
+    background-color:rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0.25vh 0 rgba(0, 0, 0, 0.25);
+    cursor: default;
+    height: 3.5em;
+    left: 0;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#header h1 {
+    height: inherit;
+    left: 1.25vh;
+    line-height: inherit;
+    margin: 0;
+    position: absolute;
+    top: 0;
+}
+
+#header nav {
+    position: absolute;
+    right: 1vh;
+    top: 0;
+}
+
+#header nav ul {
+    margin: 0;
+}
+
+#header nav ul li {
+    display: inline-block;
+    margin-left: 1vh;
+}
+
+#header nav ul li a, #header nav ul li span {
+    border: 0;
+    color: black;
+    display: inline-block;
+    height: inherit;
+    line-height: inherit;
+    outline: 0;
+}
+
+#header nav ul li a.button, #header nav ul li span.button {
+    height:4.8vh;
+    line-height: 3.5vh;
+    padding: 0 1.25vh;
+    text-align: center;
+    padding-top: 3px;
+    width: 90px;
+
+
+}
+
+#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
+    margin-right: 0.5vh;
+}
+
+#header nav ul li.active > a, #header nav ul li.active > span {
+    color: #e44c65;
+}
+
+#header nav ul li > ul {
+    display: none;
+}
+    
+input[type="submit"].special,
+input[type="reset"].special,
+input[type="button"].special,
+.button.special {
+    background-color: #e44c65;
+    box-shadow: none;
+    color: #ffffff !important;
+    border-radius: 4px;
+
+}
+
+input[type="submit"].special:hover,
+input[type="reset"].special:hover,
+input[type="button"].special:hover,
+.button.special:hover {
+    background-color: #e76278;
+}
+
+input[type="submit"].special:active,
+input[type="reset"].special:active,
+input[type="button"].special:active,
+.button.special:active {
+    background-color: #e13652;
+}
+li {
+    white-space: nowrap;
+}
+a {
+    text-decoration: none;
+}
+
+/* Title */
+
+#title {
+    text-align: center;
+    margin-top: 8vh;
+    font-size: 3.5rem;
+}
+
+main > h1 {
+    color: #19191a;
+  }
+  @media only screen and (min-width: 1600px) {
+    main > h1 {
+      /* title goes into the header on big devices */
+      color: #ffffff;
+    }
+  }
+  
+  /* -------------------------------- 
+  
+  xTypography 
+  
+  -------------------------------- */
+  h1, h2, h3 {
+    font-family: "Nunito", sans-serif !important;
+    color: #19191a;
+  }
+  
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 .4em;
+  }
+  @media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    h1 {
+      font-size: 3rem;
+      font-weight:400;
+    }
+  }
+  
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1em 0;
+  }
+  @media only screen and (min-width: 768px) {
+    h2 {
+      font-size: 1.8rem;
+      margin: 1em 0 1.4em;
+    }
+  }
+
+/*Group Picture*/
+
+#grouppic {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    display: block;
+    max-width: 100%;
+    height: 30vw;
+}
+
+/*logo*/
+
+#logo2 {
+    height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.desc {
+    margin: 0 auto;
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+}
+
+.profilePic {
+    border-radius: 50%;
+    height: 25vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:2vh
+}
+
+.miss {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif;
+    margin-right: 4vw;
+    margin-left: 4vw;
+}
+
