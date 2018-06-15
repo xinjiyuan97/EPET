@@ -77,3 +77,4 @@ class JudgeRequest(models.Model):
         choices  = STATUS,
         default = 'RAW'
     )
+

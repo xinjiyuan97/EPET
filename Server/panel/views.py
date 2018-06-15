@@ -9,10 +9,46 @@ def home(request):
     userInfo = UserInfo.objects.get(id = int(str(request.user)))
     if not userInfo.name:
         return HttpResponseRedirect('/fillinfo/')
-    user = {'id': str(request.user), 'name': userInfo.name}
-    return render(request, 'panel.html', {'user': user, 'taskList': [], 'notificationList': []})
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'home.html', {'user': user, 'taskList': [], 'notificationList': []})
 
 @login_required(login_url='/login/')
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/')
+
+@login_required(login_url='/login/')
+def syllabus(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'syllabus.html', {'user': user, 'taskList': [], 'notificationList': []})
+
+@login_required(login_url='/login/')
+def experiment(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'experiment.html', {'user': user, 'taskList': [], 'notificationList': [], 'experimentList': experiment})
+
+@login_required(login_url='/login/')
+def report(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'report.html', {'user': user, 'taskList': [], 'notificationList': [], 'report': report})
+
+@login_required(login_url='/login/')
+def score(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'score.html', {'user': user, 'taskList': [], 'notificationList': [], 'report': report})
+
+@login_required(login_url='/login/')
+def data(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'data.html', {'user': user, 'taskList': [], 'notificationList': [], 'report': report})
+
+@login_required(login_url='/login/')
+def aboutUs(request):
+    userInfo = UserInfo.objects.get(id = int(str(request.user)))
+    user = {'id': str(request.user), 'name': userInfo.name, 'usertype': userInfo.userType}
+    return render(request, 'aboutUs.html', {'user': user, 'taskList': [], 'notificationList': [], 'report': report})

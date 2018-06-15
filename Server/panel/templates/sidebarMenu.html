@@ -6,6 +6,11 @@
         <li><a href="/experiment/"><i class="lnr lnr-book"></i> <span>实验介绍</span></a></li>
         <li><a href="/report/"><i class="lnr lnr-pencil"></i> <span>实验报告</span></a></li>
         <li><a href="/score/"><i class="lnr lnr-chart-bars"></i> <span>实验成绩</span></a></li>
+        
+        {% if user.usertype == 'TR' %}
+            <li><a href="/score/"><i class="lnr lnr-pencil"></i> <span>编辑试验</span></a></li>
+        {% endif %}
+        
         <li><a href="#"><i class="lnr lnr-envelope"></i> <span>反馈信息</span><span class="fa fa-angle-right" style="float: right"></span></a>
             <ul>
                 <li><a href="inbox.html"><i class="fa fa-inbox"></i> 提出反馈信息</a></li>

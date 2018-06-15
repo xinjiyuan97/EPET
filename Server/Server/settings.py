@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     'basicPages',
     'panel',
+    'upload',
 ]
 
 MIDDLEWARE = [

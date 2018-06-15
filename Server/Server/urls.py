@@ -22,6 +22,7 @@ from experiment import views as experimentViews
 from lessons import views as lessonsViews
 from basicPages import views as basicViews
 from panel import views as panelViews
+from upload import views as uploadViews
 urlpatterns = [
     url(r'^register/varify/$', userViews.varify),
     url(r'^api/users/$', userViews.UsersList.as_view()),
@@ -36,7 +37,11 @@ urlpatterns = [
     url(r'^api/experiment/add/', experimentViews.AddExperiment.as_view()),
     url(r'^api/experiment/all/', experimentViews.ShowAllExperiments.as_view()),
     url(r'^api/experiment/(?P<id>[0-9]+)/$', experimentViews.ShowExperiment.as_view()),
-
+    url(r'^api/experiment/judge/submit/', experimentViews.Submit.as_view()),
+    url(r'^api/experiment/judge/list/', experimentViews.ListAllJudgeRequests.as_view()),
+    url(r'^api/experiment/judge/update/(?P<id>[0-9]+)/$', experimentViews.UpdateJudgeRequest.as_view()),
+    url(r'^api/experiment/judge/get/(?P<id>[0-9+])/$', experimentViews.ListJudgeRequest.as_view()),
+    
     url(r'^api/lessons/add/', experimentViews.AddALesson.as_view()),
     url(r'^api/lessons/update/(?P<id>[0-9]+)/$', experimentViews.UpdateLessons.as_view()),
     url(r'^api/lessons/list/', experimentViews.ListAllLessons.as_view()),
@@ -51,7 +56,9 @@ urlpatterns = [
     url(r'^api/student/update/(?P<id>[0-9]+)/$', lessonsViews.FillStudentRequest.as_view()),
     url(r'^api/student/get/(?P<id>[0-9]+)/$', lessonsViews.GetRespond.as_view()),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    
+    url(r'^api/upload/Oscilloscope/', uploadViews.uploadOscilloscope.as_view()),
+
+
     url(r'^$', basicViews.home, name = 'home'),
     url(r'^login/', basicViews.login, name = 'login'),
     url(r'^signup/', basicViews.signup, name = 'signup'),
