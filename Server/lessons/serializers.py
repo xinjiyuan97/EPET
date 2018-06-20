@@ -14,4 +14,4 @@ class StudentRequestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = StudentRequests
-        fields = ('id', 'labNum', 'tableNum', 'date', 'requestClasses', 'reponseContent', 'reponseClasses', 'requestStatus', 'owner')
+        fields = ('id', 'labNum', 'tableNum', 'date', 'experimentId', 'resourcesId', 'requestClasses', 'reponseContent', 'reponseClasses', 'requestStatus', 'owner')

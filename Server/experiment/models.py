@@ -65,6 +65,7 @@ class JudgeRequest(models.Model):
     """
     owner = models.ForeignKey('users.UserInfo', related_name = "RequestOwner", default = None, on_delete = models.CASCADE)
     Title = models.CharField(max_length = 200)
+    labNum = models.CharField(max_length = 200) # 实验室门牌号
     date = models.DateTimeField(default = timezone.now)
     report = models.TextField()
     requestStatus = models.CharField(

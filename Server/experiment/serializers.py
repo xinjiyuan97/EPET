@@ -31,7 +31,7 @@ class JudgeRequestSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source = 'owner.id')
     class Meta:
         model = JudgeRequest
-        fields = ('id', 'Title', 'report', 'requestStatus', 'Status', 'owner')
+        fields = ('id', 'Title', 'report', 'requestStatus', 'Status', 'owner', 'labNum')
 
 class ScoreSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source = 'owner.id')

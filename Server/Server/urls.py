@@ -59,7 +59,7 @@ urlpatterns = [
     url(r'^api/upload/Oscilloscope/', uploadViews.uploadOscilloscope.as_view()),
 
 
-    url(r'^$', basicViews.home, name = 'home'),
+    url(r'^$', panelViews.home, name = 'home'),
     url(r'^login/', basicViews.login, name = 'login'),
     url(r'^signup/', basicViews.signup, name = 'signup'),
     url(r'^fillinfo/', basicViews.fillInformation, name = 'fillInfo'),
