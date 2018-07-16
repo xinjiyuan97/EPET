@@ -53,6 +53,8 @@ class StudentRequests(models.Model):
     labNum = models.CharField(max_length = 200) # 实验室门牌号
     tableNum = models.IntegerField() # 学生桌号
     date = models.DateTimeField(default = timezone.now) # 请求发送时间
+    experimentId = models.IntegerField(default = 0) # 请求对应试验编号
+    resourcesId = models.IntegerField(default = 0) # 实验资源编号
     requestClasses = models.CharField( # 请求类型
         max_length = 2,
         choices = REQUESTCLASSES,

@@ -1,0 +1,126 @@
+{% extends "panel.html" %}
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="/static/panel/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+<link href="/static/panel/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+<link href="/static/panel/css/font-awesome.css" rel="stylesheet"> 
+    <!-- jQuery -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+<link rel="stylesheet" href="/static/panel/css/icon-font.min.css" type='text/css' />
+    <!-- /js -->
+<script src="/static/panel/js/jquery-1.10.2.min.js"></script>
+{% endblock %}
+
+{% block inner %}
+<div class="outter-wp">
+<h2 class="inner-tittle">实验报告提交情况</h2>
+<div class = "graph">
+    <div class = "content tab">
+        <div class = "tables">
+            <table class = "table">
+                <thead>
+                    <tr>
+                        <th>截止日期</th>
+                        <th>实验名称</th>
+                        <th>报告状态</th>
+                        <th>报告成绩</th>
+                        <th>实验报告</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in report %}
+                    <tr>
+                    <th scope="row">{{ item.deadLine }}</th>
+                    <th>{{ item.lessons }}</th>
+                    <th> {% if item.status == 2 %} 
+                      未提交
+                    {% elif item.status == 1 %}
+                      迟交
+                    {% else %}
+                      已交
+                    {% endif %}
+                    </th>
+                    <th>
+                        {% if item.score != -1 %}
+                        {{ item.score }}
+                        {% endif %}
+                    </th>
+                    <th><a href = "?id = {{ item.id }}">查看详情</a></th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<h2 class="inner-tittle"> 提交实验报告 </h2>
+<div class="graph-form">
+    <div class="form-body">
+        <form method="POST" action="/report/"> 
+
+            <div class="form-group"> 
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 选择文件 </label>{{form.fillPath}} 
+                    <p> 请提交PDF或Word文件</p> 
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 选择课程 </label>{{form.lessons}}  
+                </div>
+                <div class="col-md-2">
+                    {{form.lessons.errors}}
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 备注 </label>{{form.remark}}  
+                </div>
+                <div class="col-md-2">
+                    {{form.remark.errors}}
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 form-group2 group-mail"> 
+                    <button type = "submit" class="btn green fifth">　保　存　</button>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            </div> 
+        </form> 
+    </div>
+</div>
+</div>
+{% endblock %}

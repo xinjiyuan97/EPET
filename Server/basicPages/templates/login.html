@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta tags -->
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="/static/css/font-awesome.css">
+	<link rel="stylesheet" href="/static/css/styleLogin.css">
+	<!-- google fonts  -->
+	<link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+</head>
+<body>
+	<div class="agile-login">
+		<h1>北航电气实践教学系统</h1>
+		<div class="wrapper">
+			<h2>登录</h2>
+			<div class="w3ls-form">
+				<form action="/login/" method="post">
+					{% csrf_token %}
+					<label>学号</label>
+					{{ form.username }}
+					
+					<label>密码</label>
+					{{ form.password }}
+
+					<span style="color: red">
+                    {% if form.all_errors %}
+                        {{ form.all_errors }}
+                    {% endif %}
+                    </span>
+					<a href="#" class="pass">忘记密码？</a>
+					<input type="submit" value="登录" />
+					
+				</form>
+				<a href = "/signup">
+				<input type = "button" value = "注册"/>
+			    </a>
+			</div>
+            
+			
+			
+		</div>
+		<br>
+		<div class="copyright">
+		<p>© 2018 Beihang EPET Login. </p> 
+	</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,36 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i> 
+{% if taskList %}
+    <span class="badge"> {{ taskList|length }} </span>
+{% endif %}
+</a>
+<ul class="dropdown-menu two">
+    {% if taskList %}
+    <li>
+        <div class="notification_header">
+            <h3>你有{notification|length} 个新任务</h3>
+        </div>
+    </li>
+    {% else %}
+    <li>
+        <div class="notification_header">
+            <h3>暂无新任务</h3>
+        </div>
+    </li>
+    {% endif %}
+    {% for item in taskList %}
+    <li><a href="#">
+        <div class="task-info">
+            <span class="task-desc">Database update</span><span class="percentage">40%</span>
+            <div class="clearfix"></div>    
+        </div>
+        <div class="progress progress-striped active">
+           <div class="bar yellow" style="width:40%;"></div>
+       </div>
+    </a></li>
+    {% endfor %}
+    <li>
+        <div class="notification_bottom">
+            <a href="#">查看所有任务</a>
+        </div> 
+    </li>
+</ul>

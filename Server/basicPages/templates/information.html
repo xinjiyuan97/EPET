@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta tags -->
+    <title>完善个人信息</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/static/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/styleLogin.css">
+    <!-- google fonts  -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+</head>
+<body>
+    <div class="agile-login">
+        <h1>北航电气实践教学系统</h1>
+        <div class="wrapper">
+            <h2>个人信息</h2>
+            <div class="w3ls-form">
+                
+                <form action="/fillinfo/" method="post">
+                    {% csrf_token %}
+                    <label>学号</label>
+                    {{ form.username }} 
+                    <label>姓名</label>
+                    {{ form.name }}  <span style="color: red"> {{ form.name.errors }} </span>
+                    <label>邮箱</label>
+                    {{ form.email }} <span style="color: red"> {{ form.email.errors }} </span>
+                    <label>手机号</label>
+                    {{ form.mPhone }} <span style="color: red"> {{ form.mPhone.errors }} </span>
+                    <input type="submit" value="注册" />
+                    
+                </form>
+            </div>
+            
+            
+            
+        </div>
+        <br>
+        <div class="copyright">
+        <p>© 2018 Beihang EPET </p> 
+    </div>
+    </div>
+    
+</body>
+</html>

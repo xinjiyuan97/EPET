@@ -1,0 +1,48 @@
+{% extends "panel.html" %}
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="/static/panel/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+<link href="/static/panel/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+<link href="/static/panel/css/font-awesome.css" rel="stylesheet"> 
+    <!-- jQuery -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+<link rel="stylesheet" href="/static/panel/css/icon-font.min.css" type='text/css' />
+    <!-- /js -->
+<script src="/static/panel/js/jquery-1.10.2.min.js"></script>
+{% endblock %}
+
+{% block inner %}
+<div class="outter-wp">
+<h2 class="inner-tittle">实验数据</h2>
+<div class = "graph">
+    <div class = "content tab">
+        <div class = "tables">
+            <table class = "table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>日期</th>
+                        <th>实验名称</th>
+                        <th>实验数据</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in experimentList %}
+                    <th scope="row">{{ item.id }}</th>
+                    <th>{{ item.title }}</th>
+                    <th><a href = "?id = {{ item.id }}">查看实验数据</a></th>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

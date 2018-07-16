@@ -1,0 +1,85 @@
+{% extends "panel.html"%}
+
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="/static/panel/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" media="screen" href="/static/about/css/about.css" />
+
+    <!-- Custom CSS -->
+<link href="/static/panel/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+<link href="/static/panel/css/font-awesome.css" rel="stylesheet"> 
+    <!-- jQuery -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+<link rel="stylesheet" href="/static/panel/css/icon-font.min.css" type='text/css' />
+    <!-- /js -->
+<script src="/static/panel/js/jquery-1.10.2.min.js"></script>
+
+<link rel="icon" href="/static/about/images/icon.png">
+    
+{% endblock %}
+
+{% block inner %}
+<div class="outter-wp">
+    <div class = "graph">
+    <div class="row">
+        <div class="col">
+            <h1 id="title">About Us</h1>
+        </div>
+    </div>
+    <!--Group Pic-->
+    <div class="row">
+        <img src="/static/about/images/headShots/lisiqi.jpg" alt="Group Picture" id="grouppic">
+    </div>
+    <!--logo + description-->
+    <div class="row" >
+        <p class="desc" style="margin-bottom:0px">EPET是一群来自北航自动化学院的学生 </p>
+    </div>
+
+    <div class="row">
+        <p class="desc">我们旨在完成电气技术实践智能实验室的搭建</p>
+    </div>
+    <!--Our Team Pics-->
+    <div class="row">
+        <div class="col">
+            <h1 id="title">Our Team</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-2 col-sm-6 col-md-3" style="text-align:center; ">
+            <img class="profilePic" src="/static/about/images/headShots/lisiqi.jpg" alt="Tanisha_Haque">
+            <p style="margin:2vh 0 0 0">辛济远</p>
+            <p>什么都干&监工</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-2 col-sm-6 col-md-3" style="text-align:center; ">
+            <img class="profilePic" src="/static/about/images/headShots/lisiqi.jpg" alt="Rakeeb Hossain">
+            <p style="margin:2vh 0 0 0">王钲日</p>
+            <p>Android端开发</p>
+        </div>
+        <div class="col-lg-2 col-sm-6 col-md-3" style="text-align:center; ">
+            <img class="profilePic" src="/static/about/images/headShots/lisiqi.jpg" alt="Mathurah_Ravigulan">
+            <p style="margin:2vh 0 0 0">李牧锴</p>
+            <p>Android端开发</p>
+        </div>
+        <div class="col-lg-2 col-sm-6 col-md-3" style="text-align:center; ">
+            <img class="profilePic" src="/static/about/images/headShots/lisiqi.jpg" alt="Richard_Zhu">
+            <p style="margin:2vh 0 0 0">蔡逸熙&谢宇涵</p>
+            <p>教师端开发</p>
+        </div>
+        <div class="col-lg-2 col-sm-6 col-md-3" style="text-align:center; ">
+            <img class="profilePic" src="/static/about/images/headShots/lisiqi.jpg" alt="Carelynn_Tsai">
+            <p style="margin:2vh 0 0 0">吴炳坤</p>
+            <p>服务器搭建&前端</p>
+        </div>
+    </div>
+</div>
+    <!-- ADVISORS -->
+</div>
+{% endblock %}

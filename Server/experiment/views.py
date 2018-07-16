@@ -89,10 +89,12 @@ class UpdateLessons(generics.RetrieveUpdateDestroyAPIView):
     def perform_create(self, serializer):
         serializer.save(owner = UserInfo.objects.get(userAccount = self.request.user))
 
+
 class ListAllLessons(generics.ListAPIView):
     queryset = ContentOfClass.objects.all()
     serializer_class = LessonsSerializer
     permission_classes = (permissions.IsAuthenticated, IsOwnerOrReadOnly)
+
 
 class Submit(generics.CreateAPIView):
     queryset = JudgeRequest.objects.all()
@@ -102,3 +104,22 @@ class Submit(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner = UserInfo.objects.get(userAccount = self.request.user))
 
+class ListAllJudgeRequests(generics.ListAPIView):
+    queryset = JudgeRequest.objects.all()
+    serializer_class = JudgeRequestSerializer
+    permission_classes = (permissions.IsAuthenticated, IsTeacher, IsOwnerOrReadOnly)
+
+
+class UpdateJudgeRequest(generics.UpdateAPIView):
+    queryset = JudgeRequest.objects.all()
+    serializer_class = JudgeRequestSerializer
+    permission_classes = (IsTeacher, )
+
+    lookup_field = 'id'
+
+class ListJudgeRequest(generics.ListAPIView):
+    queryset = JudgeRequest.objects.all()
+    serializer_class = JudgeRequestSerializer
+    permission_classes = (IsOwnerOrReadOnly, )
+
+    lookup_field = 'id'
