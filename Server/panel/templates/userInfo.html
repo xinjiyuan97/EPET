@@ -1,0 +1,125 @@
+{% extends "panel.html" %}
+{% block header %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="/static/panel/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+<link href="/static/panel/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+<link href="/static/panel/css/font-awesome.css" rel="stylesheet"> 
+    <!-- jQuery -->
+<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+    <!-- lined-icons -->
+<link rel="stylesheet" href="/static/panel/css/icon-font.min.css" type='text/css' />
+    <!-- /js -->
+<script src="/static/panel/js/jquery-1.10.2.min.js"></script>
+{% endblock %}
+
+{% block inner %}
+<div class="outter-wp">
+    <div class="graph-visual">
+    <h2 class="inner-tittle">个人信息</h2>
+    <div class="graph">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 姓名： {{user.name}} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 学号： {{user.id}} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 邮箱： {{user.email}} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 手机号： {{ user.mPhone }} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 用户身份： {{ user.userType }} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 学院： {{ user.school }} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 专业： {{ user.major }} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 grid_box1">
+                    <p> 授课教师： {{ user.teacher }} </p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>  
+    </div>
+</div>
+{% endblock %}

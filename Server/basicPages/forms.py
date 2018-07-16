@@ -36,7 +36,7 @@ class InformationForm(forms.Form):
                         'invalid':'请输入正确的邮箱格式'},
     )
     
-    mphone = fields.CharField( # 手机号
+    mPhone = fields.CharField( # 手机号
         required = False,
         max_length = 11,
         min_length = 11,

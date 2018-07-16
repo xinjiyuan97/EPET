@@ -72,6 +72,10 @@ urlpatterns = [
     url(r'^score/$', panelViews.score, name = 'score'),
     url(r'^data/$', panelViews.data, name = 'data'),
     url(r'^aboutUs/$', panelViews.aboutUs, name = 'aboutUs'),
+    url(r'^userInfo/$', panelViews.userInfo, name = 'aboutUs'),
+    url(r'^settings/$', panelViews.settings, name = 'settings'),
+    url(r'^changePwd/$', panelViews.settingPass, name = 'changePwd'),
+
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
 
 handler403 = basicViews.permissionDenied

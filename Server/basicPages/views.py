@@ -57,14 +57,14 @@ def createActiCode(id, tokenExptime):
     md5.update(code.encode()) 
     return md5.hexdigest()
 
-def updataInfo(username, name, email, mphone):
+def updataInfo(username, name, email, mPhone):
     user = UserInfo.objects.get(id = int(username))
     user.name = name
     user.email = email
-    user.mphone = mphone
+    user.mPhone = mPhone
     user.tokenExptime = datetime.datetime.now() + datetime.timedelta(days = 2)
     user.actiCode = createActiCode(username, user.tokenExptime)
-    mess.sendVerifyMail(name, email, user.actiCode)
+    # dmess.sendVerifyMail(name, email, user.actiCode)
     user.save()
 
 @login_required(login_url='/login/')
@@ -73,7 +73,7 @@ def fillInformation(request):
         form = InformationForm(request.POST)
         if form.is_valid():
             updataInfo(form.cleaned_data['username'], form.cleaned_data['name'], \
-                form.cleaned_data['email'], form.cleaned_data['mphone'])
+                form.cleaned_data['email'], form.cleaned_data['mPhone'])
             return HttpResponseRedirect('/home/')
     else:
         form = InformationForm({'username': str(request.user)})

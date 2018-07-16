@@ -27,7 +27,7 @@
             <table class = "table">
                 <thead>
                     <tr>
-                        <th>日期</th>
+                        <th>截止日期</th>
                         <th>实验名称</th>
                         <th>报告状态</th>
                         <th>报告成绩</th>
@@ -36,13 +36,90 @@
                 </thead>
                 <tbody>
                     {% for item in report %}
-                    <th scope="row">{{ item.id }}</th>
-                    <th>{{ item.title }}</th>
+                    <tr>
+                    <th scope="row">{{ item.deadLine }}</th>
+                    <th>{{ item.lessons }}</th>
+                    <th> {% if item.status == 2 %} 
+                      未提交
+                    {% elif item.status == 1 %}
+                      迟交
+                    {% else %}
+                      已交
+                    {% endif %}
+                    </th>
+                    <th>
+                        {% if item.score != -1 %}
+                        {{ item.score }}
+                        {% endif %}
+                    </th>
                     <th><a href = "?id = {{ item.id }}">查看详情</a></th>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
+<h2 class="inner-tittle"> 提交实验报告 </h2>
+<div class="graph-form">
+    <div class="form-body">
+        <form method="POST" action="/report/"> 
+
+            <div class="form-group"> 
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 选择文件 </label>{{form.fillPath}} 
+                    <p> 请提交PDF或Word文件</p> 
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 选择课程 </label>{{form.lessons}}  
+                </div>
+                <div class="col-md-2">
+                    {{form.lessons.errors}}
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 grid_box1">
+                    
+                </div>
+                <div class="col-md-8 form-group2 group-mail"> 
+                    <label> 备注 </label>{{form.remark}}  
+                </div>
+                <div class="col-md-2">
+                    {{form.remark.errors}}
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 grid_box1">
+                    
+                </div>
+                <div class="col-md-4 form-group2 group-mail"> 
+                    <button type = "submit" class="btn green fifth">　保　存　</button>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+
+            </div> 
+        </form> 
     </div>
 </div>
 </div>

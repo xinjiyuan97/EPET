@@ -25,9 +25,6 @@ class Experiments(models.Model):
     reportTemplete = models.TextField() # 实验数据文档模版
     belongs = models.CharField(max_length = 200) # 主实验名称
 
-    def __str__(self):
-        return Title
-
 class ContentOfClass(models.Model):
     """
     TODO: 用于记录每节课包含哪些实验
@@ -36,7 +33,7 @@ class ContentOfClass(models.Model):
     #     return User.objects.get(username = 'admin')
 
     owner = models.ForeignKey('users.UserInfo', related_name = "ClassOwner", default = None, on_delete = models.CASCADE)
-    Title = models.CharField(max_length = 200) # 课程名称
+    title = models.CharField(max_length = 200) # 课程名称
     experments = models.TextField() # 包含实验，用Json描述
     
 class ExperimentScore(models.Model):
@@ -65,7 +62,7 @@ class JudgeRequest(models.Model):
     """
     owner = models.ForeignKey('users.UserInfo', related_name = "RequestOwner", default = None, on_delete = models.CASCADE)
     Title = models.CharField(max_length = 200)
-    labNum = models.CharField(max_length = 200) # 实验室门牌号
+    labNum = models.CharField(max_length = 200, default = "000") # 实验室门牌号
     date = models.DateTimeField(default = timezone.now)
     report = models.TextField()
     requestStatus = models.CharField(

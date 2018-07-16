@@ -1,4 +1,5 @@
 {% extends "panel.html" %}
+<!-- 实验内容介绍 -->
 {% block header %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,31 +21,13 @@
 
 {% block inner %}
 <div class="outter-wp">
-<h2 class="inner-tittle">实验列表</h2>
-<div class = "graph">
-    <div class = "content tab">
-        <div class = "tables">
-            <table class = "table">
-                <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>实验名称</th>
-                        <th>实验简介</th>
-                    </tr>
-                </thead>
-                <tbody>
+<h2 class="inner-tittle">{{ exp.title }}</h2>
+{% for item in exp.experiments %}
+<div class="panel panel-primary">
 
-                    {% for item in experimentList %}
-                    <tr>
-                    <th scope="row">{{ item.id }}</th>
-                    <th>{{ item.title }}</th>
-                    <th><a href= "?id= {{ item.id }}">查看详情</a></th>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div class="panel-heading"> {{ item.Title }} </div>            
+    <div class="panel-body"><p> {{ item.description }}</p></div>
 </div>
+{% endfor %}
 </div>
 {% endblock %}

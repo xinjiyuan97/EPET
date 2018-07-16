@@ -29,6 +29,10 @@ class UserInfo(models.Model):
         default = 'SD'
     )
 
+    school = models.CharField(max_length = 200, default = u"自动化科学与电气工程学院") # 学院
+    major = models.CharField(max_length = 200, default = u"自动化") # 专业
+    teacher = models.CharField(max_length = 200, default = u"待定") # 老师姓名
+
     # 邮箱验证部分
     status = models.BooleanField(default = False) # 是否通过邮箱验证
     actiCode = models.CharField(max_length = 200, default = "NULL") # 激活码
